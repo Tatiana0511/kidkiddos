@@ -19,6 +19,7 @@ public class ContactUsPage extends BasePage {
     private static final String USD_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-USD']";
     private static final String EUR_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-EUR']";
     private static final String GBP_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-GBP']";
+    private static final String INR_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-INR']";
 
 
     public void navigateToContactUsPage() {
@@ -90,6 +91,13 @@ public class ContactUsPage extends BasePage {
         return elementExists(GBP_CURRENCY);
 
     }
+
+
+    public boolean isInrCurrencyAvailable() {
+        return elementExists(INR_CURRENCY);
+
+    }
+
     public LoginPage openLoginPage() {
         clickElementByXpath(LOGIN_BUTTON);
         return new LoginPage();
