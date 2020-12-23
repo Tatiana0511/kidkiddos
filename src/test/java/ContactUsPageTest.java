@@ -134,6 +134,16 @@ public class ContactUsPageTest extends UseCaseBase {
 
 
     }
+    @Test
+    public void findInrInCurrencyList() {
+        contactUsPage.clickCurrencyList();
+        boolean isFound = contactUsPage.isInrCurrencyAvailable();
+        assertTrue(isFound);
+
+
+    }
+
+
 
     @Test
     public void openLoginPage() {
