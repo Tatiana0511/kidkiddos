@@ -1,17 +1,17 @@
 import Pages.ContactUsPage;
-import Pages.FaqsPage;
-import Pages.MainPage;
+
+import Pages.LoginPage;
+
 import Utils.UseCaseBase;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -101,14 +101,7 @@ public class ContactUsPageTest extends UseCaseBase {
 
     }
 
-    @Test
-      public void openLoginPage() {
-      contactUsPage.clickAccountButton();
-      boolean isLoaded = contactUsPage.isLoginTitleVisible();
-      assertTrue(isLoaded);
 
-
-    }
     @Test
     public void openCartPage() {
         contactUsPage.clickCartButton();
@@ -141,5 +134,16 @@ public class ContactUsPageTest extends UseCaseBase {
 
 
     }
+
+    @Test
+    public void openLoginPage() {
+        LoginPage loginPage = contactUsPage.openLoginPage();
+        assertNotNull(loginPage);
+        boolean isLoaded = loginPage.isLogoVisible();
+        assertTrue(isLoaded);
+
+
+    }
+
 }
 

@@ -13,7 +13,6 @@ public class ContactUsPage extends BasePage {
     private static final String SEND_MESSAGE_BUTTON = "//*[@id='_form_44_submit']";
     private static final String ERROR_MESSAGE = "//*[@class= '_error-inner']";
     private static final String LOGIN_BUTTON = "//*[@class='icon icon-login']";
-    private static final String LOGIN_HEADER = "//h1[text()='Login']";
     private static final String CART_BUTTON = "//*[@class='icon icon-cart']";
     private static final String CART_HEADER = "//h1[text()='Your cart']";
     private static final String CURRENCY_LIST = "//*[@class='currency-converter-currency-button cbb-desktop-view skiptranslate notranslate']";
@@ -63,15 +62,6 @@ public class ContactUsPage extends BasePage {
 
     }
 
-    public void clickAccountButton() {
-        clickElementByXpath(LOGIN_BUTTON);
-
-    }
-
-    public boolean isLoginTitleVisible() {
-        return elementExists(LOGIN_HEADER);
-
-    }
 
     public void clickCartButton() {
         clickElementByXpath(CART_BUTTON);
@@ -88,12 +78,6 @@ public class ContactUsPage extends BasePage {
 
     }
 
-    public void clickUsd() {
-        clickElementByXpath(USD_CURRENCY);
-
-    }
-
-
     public boolean isUsdCurrencyAvailable() {
         return elementExists(USD_CURRENCY);
 
@@ -105,6 +89,10 @@ public class ContactUsPage extends BasePage {
     public boolean isGbpCurrencyAvailable() {
         return elementExists(GBP_CURRENCY);
 
+    }
+    public LoginPage openLoginPage() {
+        clickElementByXpath(LOGIN_BUTTON);
+        return new LoginPage();
     }
 
 }
