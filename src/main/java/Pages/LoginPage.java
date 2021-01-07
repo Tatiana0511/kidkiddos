@@ -1,9 +1,7 @@
 package Pages;
 
 import Consts.Consts;
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoginPage extends BasePage{
     private static final String LOGIN_HEADER = "//h1[text()='Login']";
@@ -15,6 +13,7 @@ public class LoginPage extends BasePage{
     private static final String CREATE_ACCOUNT = "//*[@id='customer_register_link']";
     private static final String CREATE_ACCOUNT_PAGE_HEADER = "//*[text()='Create Account']";
     private static final String ERROR_FIELD = "//*[text()='Incorrect email or password.']";
+
 
 
     public void navigateToLoginPage() {

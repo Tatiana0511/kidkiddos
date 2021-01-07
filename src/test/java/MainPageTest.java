@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,7 +28,7 @@ public class MainPageTest extends UseCaseBase {
 
     @Test
     public void mainPageLoadTest() {
-        logger.info("Main page load test");
+        //logger.info("Main page load test");
         Boolean success = mainPage.isLogoVisible();
         mainPage.takeScreenshot("MainPageTest");
         assertTrue(success);
@@ -34,7 +36,7 @@ public class MainPageTest extends UseCaseBase {
 
     @Test
     public void openContactUsPage() {
-        logger.info("ContactUs Page test");
+        //logger.info("ContactUs Page test");
         ContactUsPage contactUsPage = mainPage.openContactUsTab();
         boolean isLoaded = contactUsPage.isPageTitleVisible();
         assertTrue(isLoaded);
@@ -144,15 +146,7 @@ public class MainPageTest extends UseCaseBase {
         assertTrue(isLoaded);
     }
 
-    @Test
-    public void openEnglishOnlyPageInEBook() {
-        mainPage.clickEBooksByLanguage();
-        EnglishEBookPage englishEBookPage = mainPage.clickEnglishEBookPage();
-        boolean isLoaded = englishEBookPage.isLogoTitleVisible();
-        assertTrue(isLoaded);
 
-
-    }
 
     @Test
     public void openResourcesPage() {
@@ -215,5 +209,38 @@ public class MainPageTest extends UseCaseBase {
 
     }
 
+    @Test
+    public void openCurrencyList() {
+        mainPage.clickCurrencyList();
+        boolean isFound = mainPage.isUsdCurrencyAvailable();
+        assertTrue(isFound);
+
+
+    }
+     @Test
+    public void findEurInCurrencyList() {
+     mainPage.clickCurrencyList();
+    boolean isFound = mainPage.isEurCurrencyAvailable();
+    assertTrue(isFound);
+
+
+     }
+    @Test
+    public void findGbpInCurrencyList() {
+        mainPage.clickCurrencyList();
+        boolean isFound = mainPage.isGbpCurrencyAvailable();
+        assertTrue(isFound);
+
+
+    }
+
+    @Test
+    public void findInrInCurrencyList() {
+        mainPage.clickCurrencyList();
+        boolean isFound = mainPage.isInrCurrencyAvailable();
+        assertTrue(isFound);
+
+
+    }
 
 }

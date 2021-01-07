@@ -23,6 +23,13 @@ public class MainPage extends BasePage {
     private static final String MANDARIN_PAGE = "//a[text()='中文']";
     private static final String BLOG_PAGE = "//a[text()='Blog' and @class = 'site-nav__link site-nav__link--main']";
     private static final String FAQS_PAGE = "//a[text()='FAQs']";
+    private static final String CURRENCY_LIST = "//*[@class='currency-converter-currency-button cbb-desktop-view skiptranslate notranslate']";
+    private static final String USD_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-USD']";
+    private static final String EUR_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-EUR']";
+    private static final String GBP_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-GBP']";
+    private static final String INR_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-INR']";
+    private static final String CURRENCIES = "//*[@class='currency-converter-chooser-item cbb-currency-code-%s']";
+
 
 
 
@@ -119,9 +126,9 @@ public class MainPage extends BasePage {
         return new RussianEBookPage();
 
     }
-    public EnglishEBookPage clickEnglishEBookPage() {
+    public EnglishBooksPage clickEnglishEBookPage() {
         clickElementByXpath(ENGLISH_EBOOK_PAGE);
-        return new EnglishEBookPage();
+        return new EnglishBooksPage();
 
     }
     public BulgarianAllLanguagesPage clickBulgarianPage() {
@@ -135,5 +142,27 @@ public class MainPage extends BasePage {
 
     }
 
+    public void clickCurrencyList() {
+        clickElementByXpath(CURRENCY_LIST);
+
+    }
+    public boolean isUsdCurrencyAvailable() {
+        return elementExists(USD_CURRENCY);
+
+    }
+    public boolean isEurCurrencyAvailable() {
+        return elementExists(EUR_CURRENCY);
+
+    }
+    public boolean isGbpCurrencyAvailable() {
+        return elementExists(GBP_CURRENCY);
+
+    }
+
+
+    public boolean isInrCurrencyAvailable() {
+        return elementExists(INR_CURRENCY);
+
+    }
 
 }
