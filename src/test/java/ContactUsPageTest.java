@@ -110,38 +110,7 @@ public class ContactUsPageTest extends UseCaseBase {
 
 
     }
-    @Test
-    public void openCurrencyList() {
-        contactUsPage.clickCurrencyList();
-        boolean isFound = contactUsPage.isUsdCurrencyAvailable();
-        assertTrue(isFound);
 
-
-    }
-    @Test
-    public void findEurInCurrencyList() {
-        contactUsPage.clickCurrencyList();
-        boolean isFound = contactUsPage.isEurCurrencyAvailable();
-        assertTrue(isFound);
-
-
-    }
-    @Test
-    public void findGbpInCurrencyList() {
-        contactUsPage.clickCurrencyList();
-        boolean isFound = contactUsPage.isGbpCurrencyAvailable();
-        assertTrue(isFound);
-
-
-    }
-    @Test
-    public void findInrInCurrencyList() {
-        contactUsPage.clickCurrencyList();
-        boolean isFound = contactUsPage.isInrCurrencyAvailable();
-        assertTrue(isFound);
-
-
-    }
 
 
 

@@ -15,11 +15,7 @@ public class ContactUsPage extends BasePage {
     private static final String LOGIN_BUTTON = "//*[@class='icon icon-login']";
     private static final String CART_BUTTON = "//*[@class='icon icon-cart']";
     private static final String CART_HEADER = "//h1[text()='Your cart']";
-    private static final String CURRENCY_LIST = "//*[@class='currency-converter-currency-button cbb-desktop-view skiptranslate notranslate']";
-    private static final String USD_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-USD']";
-    private static final String EUR_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-EUR']";
-    private static final String GBP_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-GBP']";
-    private static final String INR_CURRENCY = "//*[@class='currency-converter-chooser-item cbb-currency-code-INR']";
+
 
 
     public void navigateToContactUsPage() {
@@ -67,36 +63,17 @@ public class ContactUsPage extends BasePage {
     public void clickCartButton() {
         clickElementByXpath(CART_BUTTON);
 
+
     }
 
     public boolean isCartTitleVisible() {
         return elementExists(CART_HEADER);
-
-    }
-
-    public void clickCurrencyList() {
-        clickElementByXpath(CURRENCY_LIST);
-
-    }
-
-    public boolean isUsdCurrencyAvailable() {
-        return elementExists(USD_CURRENCY);
-
-    }
-    public boolean isEurCurrencyAvailable() {
-        return elementExists(EUR_CURRENCY);
-
-    }
-    public boolean isGbpCurrencyAvailable() {
-        return elementExists(GBP_CURRENCY);
+        
 
     }
 
 
-    public boolean isInrCurrencyAvailable() {
-        return elementExists(INR_CURRENCY);
 
-    }
 
     public LoginPage openLoginPage() {
         clickElementByXpath(LOGIN_BUTTON);
